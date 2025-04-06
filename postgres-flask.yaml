@@ -38,20 +38,20 @@ spec:
       - name: tmp-volume
         emptyDir: {}
 ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: flask-app-service
-#   labels:
-#     app: flask-app
-#     job: flask-app-metrics  
-# spec:
-#   selector:
-#     app: flask-app
-#   ports:
-#     - name: http
-#       protocol: TCP
-#       port: 80
-#       targetPort: 5000
-#       nodePort: 30008
-#   type: NodePort
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-app-service
+  labels:
+    app: flask-app
+    job: flask-app-metrics  
+spec:
+  selector:
+    app: flask-app
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 5000
+      nodePort: 30008
+  type: NodePort
